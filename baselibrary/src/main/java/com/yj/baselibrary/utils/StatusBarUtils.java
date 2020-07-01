@@ -12,9 +12,6 @@ import android.view.WindowManager;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/**
- * 状态栏设置
- */
 public class StatusBarUtils {
     /**
      * 修改状态栏为全透明

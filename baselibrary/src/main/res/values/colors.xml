@@ -4,4 +4,56 @@
     <color name="b0000000">#b0000000</color>
     <color name="c0ffff00">#c0ffff00</color>
     <color name="colorPrimary">#ed0cfe</color>
+    <color name="colorPrimaryDark">#ed0cfe</color>
+    <color name="colorAccent">#ed0cfe</color>
+    <!--首页轮播图的指示器颜色-->
+    <color name="banner_press">#ed0cfe</color>
+    <color name="back_img">#ed0cfe</color>
+    <color name="cp_colorAccent">#F3F3F3</color>
+    <color name="cp_colorPrimary">@color/cp_colorAccent</color>
+    <color name="cp_colorPrimaryDark">@color/cp_colorAccent</color>
+
+    <color name="cp_divider">#E5E5E5</color>
+    <color name="cp_shadow">#AAEBEBEB</color>
+    <color name="cp_common_bg">#FAFAFA</color>
+    <color name="cp_content_bg">@color/cp_colorAccent</color>
+    <color name="cp_gray">#8c8c8c</color>
+    <color name="cp_gray_deep">#5c5c5c</color>
+    <color name="cp_alpha_gray">#CC646464</color>
+    <color name="cp_theme_gray">#646464</color>
+    <!--城市-->
+    <color name="city_colorAccent">#F3F3F3</color>
+    <color name="city_colorPrimary">@color/city_colorAccent</color>
+    <color name="city_colorPrimaryDark">@color/city_colorAccent</color>
+    <color name="city_divider">#cccccc</color>
+    <color name="city_shadow">#AAEBEBEB</color>
+    <color name="city_common_bg">#FAFAFA</color>
+    <color name="city_content_bg">@color/city_colorAccent</color>
+    <color name="city_gray">#b7b7b7</color>
+    <color name="city_side_letter" >#797979</color>
+    <color name="city_shallow_gray" >#666666</color>
+    <color name="city_alpha_gray">#CC646464</color>
+    <color name="city_theme_gray">#646464</color>
+    <!--分割线-->
+    <color name="colorDivider">#dedede</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="tv_black">#333333</color>
+    <color name="yselect_time">#1fc2e1</color>
+    <!--透明    -->
+    <color name="colorTransparent">#00000000</color>
+    <color name="banner_normal">#ffffff</color>
+    <color name="home_class_tv">#333333</color>
+    <color name="love_shop_normal">#999999</color>
+    <color name="grid_view_bg_press">#f9f9f9</color>
+    <color name="grid_view_bg">#eeeeee</color>
+    <color name="app_color_f6">#f6f6f6</color>
+    <color name="app_color_fa">#fafafa</color>
+    <color name="app_color_yellow">#ff9c00</color>
+    <color name="color_main_xml">#fff2f4f8</color>
+    <color name="time_normal">#a0a0a0</color>
+    <color name="app_color_grey">#393a3e</color>
+    <color name="app_color_black">#000000</color>
+    <color name="no_select_time">#D6D6D6</color>
+    <color name="select_time">#DA2CFA</color>
 </resources>

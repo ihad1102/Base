@@ -8,7 +8,6 @@ import android.view.ViewConfiguration;
 import java.lang.reflect.Method;
 
 /**
- * 虚拟键判断
  * Created by yangjie on 17/9/5.
  */
 

@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * 通知栏权限判断
+ * 通知栏
  */
 public class NotificationsUtils {
 

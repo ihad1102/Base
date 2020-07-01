@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 输入键盘判断
  * Created by yangjie on 17/10/14.
  */
 
