@@ -27,7 +27,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.view.SurfaceHolder;
 
-import com.yj.base.qrcode.utils.ScreenInfo;
+import com.yj.baselibrary.qrcode.utils.ScreenInfo;
 
 import java.io.IOException;
 

@@ -27,10 +27,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.google.zxing.ResultPoint;
-import com.yj.base.R;
-import com.yj.base.qrcode.camera.CameraManager;
+import com.yj.baselibrary.R;
+import com.yj.baselibrary.qrcode.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.HashSet;
