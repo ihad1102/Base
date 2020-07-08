@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -59,10 +60,8 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         mSavedInstanceState=savedInstanceState;
         mRxManager=new RxManager();
         setContentView(getLayoutId());
-        //全屏显示
-        StatusBarUtils.setStyle(this);
        //竖屏
-//     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         mContext = this;
         mPresenter = TUtil.getT(this, 0);
         mModel=TUtil.getT(this,1);
