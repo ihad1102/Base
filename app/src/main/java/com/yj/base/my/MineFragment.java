@@ -23,11 +23,11 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
 
     }
 
-    public static MineFragment mineFragment;
-    public static MineFragment getInstance() {
-        mineFragment = new MineFragment();
-        return mineFragment;
-    }
+//    public static MineFragment mineFragment;
+//    public static MineFragment getInstance() {
+//        mineFragment = new MineFragment();
+//        return mineFragment;
+//    }
     @Override
     protected void initView(){
 

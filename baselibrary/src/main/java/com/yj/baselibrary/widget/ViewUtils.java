@@ -361,7 +361,7 @@ public class ViewUtils {
                 if (pf.getName().equals("mSelectionDivider")) {
                     pf.setAccessible(true);
                     try {
-                        pf.set(picker, new ColorDrawable(context.getResources().getColor(R.color.colorAccent)));
+                        pf.set(picker, new ColorDrawable(context.getResources().getColor(R.color.banner_press)));
                     } catch (IllegalArgumentException e) {
                         e.printStackTrace();
                     } catch (Resources.NotFoundException e) {

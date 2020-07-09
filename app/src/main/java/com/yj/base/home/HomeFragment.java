@@ -16,12 +16,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
-    public static HomeFragment homeFragment;
-
-    public static HomeFragment getInstance(){
-        homeFragment = new HomeFragment();
-        return homeFragment;
-    }
+//    public static HomeFragment homeFragment;
+//
+//    public static HomeFragment getInstance(){
+//        homeFragment = new HomeFragment();
+//        return homeFragment;
+//    }
     @Override
     protected int getLayoutResource(){
         return R.layout.fragment_home;

@@ -3,16 +3,13 @@
     <color name="c6000000">#60000000</color>
     <color name="b0000000">#b0000000</color>
     <color name="c0ffff00">#c0ffff00</color>
-    <color name="colorPrimary">#ed0cfe</color>
-    <color name="colorPrimaryDark">#ed0cfe</color>
-    <color name="colorAccent">#ed0cfe</color>
     <!--首页轮播图的指示器颜色-->
-    <color name="banner_press">#ed0cfe</color>
-    <color name="back_img">#ed0cfe</color>
+    <color name="banner_press">#13227a</color>
+    <color name="back_img">#13227a</color>
     <color name="cp_colorAccent">#F3F3F3</color>
     <color name="cp_colorPrimary">@color/cp_colorAccent</color>
     <color name="cp_colorPrimaryDark">@color/cp_colorAccent</color>
-
+    <color name="home_tv_press">#13227a</color>
     <color name="cp_divider">#E5E5E5</color>
     <color name="cp_shadow">#AAEBEBEB</color>
     <color name="cp_common_bg">#FAFAFA</color>
@@ -39,7 +36,6 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="tv_black">#333333</color>
-    <color name="yselect_time">#1fc2e1</color>
     <!--透明    -->
     <color name="colorTransparent">#00000000</color>
     <color name="banner_normal">#ffffff</color>
@@ -55,5 +51,4 @@
     <color name="app_color_grey">#393a3e</color>
     <color name="app_color_black">#000000</color>
     <color name="no_select_time">#D6D6D6</color>
-    <color name="select_time">#DA2CFA</color>
 </resources>

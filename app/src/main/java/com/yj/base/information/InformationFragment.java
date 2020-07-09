@@ -25,12 +25,12 @@ public class InformationFragment extends BaseFragment implements View.OnClickLis
 
     }
 
-    public static InformationFragment mineFragment;
-
-    public static InformationFragment getInstance() {
-        mineFragment = new InformationFragment();
-        return mineFragment;
-    }
+//    public static InformationFragment mineFragment;
+//
+//    public static InformationFragment getInstance() {
+//        mineFragment = new InformationFragment();
+//        return mineFragment;
+//    }
     @Override
     protected void initView(){
 
