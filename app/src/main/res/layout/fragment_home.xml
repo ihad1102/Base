@@ -3,19 +3,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#eeeeee"
+    android:background="#f6f6f6"
     android:orientation="vertical">
     <include layout="@layout/toolbar_title"/>
     <cn.bingoogolapple.bgabanner.BGABanner
         android:id="@+id/banner_main"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         style="@style/BannerDefaultStyle"
         app:banner_indicatorGravity="bottom|center_horizontal"
         app:banner_transitionEffect="depth"
         />
-
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+       android:paddingTop="15dp"
+       android:background="@color/white"
+      >
+       <TextView
+           android:id="@+id/tv_zhzc"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="智慧资产"
+           android:textSize="14sp"
+           android:drawablePadding="5dp"
+           android:drawableTop="@drawable/zhihuizican"
+           android:gravity="center"
+           android:textColor="@color/colorAccent"
+           ></TextView>
+       <TextView
+           android:id="@+id/tv_zhwy"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="智慧物业"
+           android:textSize="14sp"
+           android:gravity="center"
+           android:drawablePadding="5dp"
+           android:drawableTop="@drawable/zhihuiwuye"
+           android:textColor="@color/colorAccent"
+           ></TextView>
+       <TextView
+           android:id="@+id/tv_jqwh"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="街区文化"
+           android:gravity="center"
+           android:drawablePadding="5dp"
+           android:drawableTop="@drawable/jiequwenhua"
+           android:textSize="14sp"
+           android:textColor="@color/colorAccent"
+           ></TextView>
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/tv_zsyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="招商运营"
+            android:textSize="14sp"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/zhaoshangyunying"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            ></TextView>
+        <TextView
+            android:id="@+id/tv_sqyz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="社区营造"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/shequyingzao"
+            android:textColor="@color/colorAccent"
+            ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent"
+            ></TextView>
+    </LinearLayout>
 </LinearLayout>

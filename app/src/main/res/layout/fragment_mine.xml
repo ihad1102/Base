@@ -7,6 +7,7 @@
     android:background="@color/color_main_xml"
     >
     <LinearLayout
+        android:id="@+id/ly_persion_information"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:orientation="horizontal"
@@ -32,13 +33,11 @@
             android:text="姓名" />
 
         <ImageView
-            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_arrow_right"
-            android:tint="@android:color/white" />
+            android:layout_margin="15dp"
+            android:src="@drawable/right_white"
+           />
     </LinearLayout>
 
     <LinearLayout
@@ -207,21 +206,27 @@
             android:src="@drawable/jieshouxiaoxi"
             />
 
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="接收消息"
             android:textColor="#333330"
-            android:layout_weight="1"
             android:textSize="14sp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            android:text="是否接收消息推送"
+            android:layout_weight="1"
+            />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/message_close"
             android:layout_marginRight="15dp"
             />
 

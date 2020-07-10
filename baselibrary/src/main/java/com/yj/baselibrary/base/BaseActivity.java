@@ -40,20 +40,20 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     public RxManager mRxManager;
     public Bundle mSavedInstanceState;
     //是否需要检测后台定位权限，设置为true时，如果用户没有给予后台定位权限会弹窗提示
-    private boolean needCheckBackLocation = false;
+//    private boolean needCheckBackLocation = false;
     //如果设置了target > 28，需要增加这个权限，否则不会弹出"始终允许"这个选择框
-    private static String BACKGROUND_LOCATION_PERMISSION = "android.permission.ACCESS_BACKGROUND_LOCATION";
+//    private static String BACKGROUND_LOCATION_PERMISSION = "android.permission.ACCESS_BACKGROUND_LOCATION";
     /**
      *需要进行检测的权限数组
      */
-    protected String[] needPermissions = {
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.READ_PHONE_STATE
-    };
-    private static final int PERMISSON_REQUESTCODE = 0;
+//    protected String[] needPermissions = {
+//            Manifest.permission.ACCESS_COARSE_LOCATION,
+//            Manifest.permission.ACCESS_FINE_LOCATION,
+//            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//            Manifest.permission.READ_EXTERNAL_STORAGE,
+//            Manifest.permission.READ_PHONE_STATE
+//    };
+//    private static final int PERMISSON_REQUESTCODE = 0;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -70,17 +70,17 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         }
         initPresenter();
         initView();
-        if(Build.VERSION.SDK_INT > 28
-                && getApplicationContext().getApplicationInfo().targetSdkVersion > 28) {
-            needPermissions = new String[]{
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_PHONE_STATE,
-                    BACKGROUND_LOCATION_PERMISSION
-            };
-        }
+//        if(Build.VERSION.SDK_INT > 28
+//                && getApplicationContext().getApplicationInfo().targetSdkVersion > 28) {
+//            needPermissions = new String[]{
+//                    Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.ACCESS_FINE_LOCATION,
+//                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                    Manifest.permission.READ_EXTERNAL_STORAGE,
+//                    Manifest.permission.READ_PHONE_STATE,
+//                    BACKGROUND_LOCATION_PERMISSION
+//            };
+//        }
     }
     //获取布局文件
     public abstract int getLayoutId();
@@ -197,20 +197,20 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     @Override
     protected void onResume() {
         super.onResume();
-        if (Build.VERSION.SDK_INT >= 23
-                && getApplicationInfo().targetSdkVersion >= 23) {
-            if (isNeedCheck) {
-                checkPermissions(needPermissions);
-            }
-        }
-        //虚拟键盘判断
-        if(VirtualBarUtil.hasNavBar(this)){
-            //让虚拟键盘一直不显示
-            Window window = getWindow();
-            WindowManager.LayoutParams params = window.getAttributes();
-            params.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE;
-            window.setAttributes(params);
-        }
+//        if (Build.VERSION.SDK_INT >= 23
+//                && getApplicationInfo().targetSdkVersion >= 23) {
+//            if (isNeedCheck) {
+//                checkPermissions(needPermissions);
+//            }
+//        }
+//        //虚拟键盘判断
+//        if(VirtualBarUtil.hasNavBar(this)){
+//            //让虚拟键盘一直不显示
+//            Window window = getWindow();
+//            WindowManager.LayoutParams params = window.getAttributes();
+//            params.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE;
+//            window.setAttributes(params);
+//        }
         super.onResume();
     }
     /**
@@ -219,23 +219,23 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
      * @since 2.5.0
      *
      */
-    private void checkPermissions(String... permissions) {
-        try {
-            if (Build.VERSION.SDK_INT >= 23
-                    && getApplicationInfo().targetSdkVersion >= 23) {
-                List<String> needRequestPermissonList = findDeniedPermissions(permissions);
-                if (null != needRequestPermissonList
-                        && needRequestPermissonList.size() > 0) {
-                    String[] array = needRequestPermissonList.toArray(new String[needRequestPermissonList.size()]);
-                    Method method = getClass().getMethod("requestPermissions", new Class[]{String[].class,
-                            int.class});
-
-                    method.invoke(this, array, PERMISSON_REQUESTCODE);
-                }
-            }
-        } catch (Throwable e) {
-        }
-    }
+//    private void checkPermissions(String... permissions) {
+//        try {
+//            if (Build.VERSION.SDK_INT >= 23
+//                    && getApplicationInfo().targetSdkVersion >= 23) {
+//                List<String> needRequestPermissonList = findDeniedPermissions(permissions);
+//                if (null != needRequestPermissonList
+//                        && needRequestPermissonList.size() > 0) {
+//                    String[] array = needRequestPermissonList.toArray(new String[needRequestPermissonList.size()]);
+//                    Method method = getClass().getMethod("requestPermissions", new Class[]{String[].class,
+//                            int.class});
+//
+//                    method.invoke(this, array, PERMISSON_REQUESTCODE);
+//                }
+//            }
+//        } catch (Throwable e) {
+//        }
+//    }
 
     /**
      * 获取权限集中需要申请权限的列表
@@ -245,99 +245,99 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
      * @since 2.5.0
      *
      */
-    private List<String> findDeniedPermissions(String[] permissions) {
-        List<String> needRequestPermissonList = new ArrayList<String>();
-        if (Build.VERSION.SDK_INT >= 23
-                && getApplicationInfo().targetSdkVersion >= 23){
-            try {
-                for (String perm : permissions) {
-                    Method checkSelfMethod = getClass().getMethod("checkSelfPermission", String.class);
-                    Method shouldShowRequestPermissionRationaleMethod = getClass().getMethod("shouldShowRequestPermissionRationale",
-                            String.class);
-                    if ((Integer)checkSelfMethod.invoke(this, perm) != PackageManager.PERMISSION_GRANTED
-                            || (Boolean)shouldShowRequestPermissionRationaleMethod.invoke(this, perm)) {
-                        if(!needCheckBackLocation
-                                && BACKGROUND_LOCATION_PERMISSION.equals(perm)) {
-                            continue;
-                        }
-                        needRequestPermissonList.add(perm);
-                    }
-                }
-            } catch (Throwable e) {
-
-            }
-        }
-        return needRequestPermissonList;
-    }
-    /**
-     * 检测是否所有的权限都已经授权
-     * @param grantResults
-     * @return
-     * @since 2.5.0
-     *
-     */
-    private boolean verifyPermissions(int[] grantResults) {
-        for (int result : grantResults) {
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @TargetApi(23)
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] paramArrayOfInt) {
-        if (requestCode == PERMISSON_REQUESTCODE) {
-            if (!verifyPermissions(paramArrayOfInt)) {
-                showMissingPermissionDialog();
-                isNeedCheck = false;
-            }
-        }
-    }
-
-    /**
-     * 显示提示信息
-     *
-     * @since 2.5.0
-     *
-     */
-    private void showMissingPermissionDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.notifyTitle);
-        builder.setMessage(R.string.notifyMsg);
-        // 拒绝, 退出应用
-        builder.setNegativeButton(R.string.cancel,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finishActivity();
-                    }
-                });
-
-        builder.setPositiveButton(R.string.setting,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startAppSettings();
-                    }
-                });
-
-        builder.setCancelable(false);
-
-        builder.show();
-    }
-
-    /**
-     *  启动应用的设置
-     *
-     * @since 2.5.0
-     *
-     */
-    private void startAppSettings() {
-        Intent intent = new Intent(
-                Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        intent.setData(Uri.parse("package:" + getPackageName()));
-        startActivity(intent);
-    }
+//    private List<String> findDeniedPermissions(String[] permissions) {
+//        List<String> needRequestPermissonList = new ArrayList<String>();
+//        if (Build.VERSION.SDK_INT >= 23
+//                && getApplicationInfo().targetSdkVersion >= 23){
+//            try {
+//                for (String perm : permissions) {
+//                    Method checkSelfMethod = getClass().getMethod("checkSelfPermission", String.class);
+//                    Method shouldShowRequestPermissionRationaleMethod = getClass().getMethod("shouldShowRequestPermissionRationale",
+//                            String.class);
+//                    if ((Integer)checkSelfMethod.invoke(this, perm) != PackageManager.PERMISSION_GRANTED
+//                            || (Boolean)shouldShowRequestPermissionRationaleMethod.invoke(this, perm)) {
+//                        if(!needCheckBackLocation
+//                                && BACKGROUND_LOCATION_PERMISSION.equals(perm)) {
+//                            continue;
+//                        }
+//                        needRequestPermissonList.add(perm);
+//                    }
+//                }
+//            } catch (Throwable e) {
+//
+//            }
+//        }
+//        return needRequestPermissonList;
+//    }
+//    /**
+//     * 检测是否所有的权限都已经授权
+//     * @param grantResults
+//     * @return
+//     * @since 2.5.0
+//     *
+//     */
+//    private boolean verifyPermissions(int[] grantResults) {
+//        for (int result : grantResults) {
+//            if (result != PackageManager.PERMISSION_GRANTED) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    @TargetApi(23)
+//    public void onRequestPermissionsResult(int requestCode,
+//                                           String[] permissions, int[] paramArrayOfInt) {
+//        if (requestCode == PERMISSON_REQUESTCODE) {
+//            if (!verifyPermissions(paramArrayOfInt)) {
+//                showMissingPermissionDialog();
+//                isNeedCheck = false;
+//            }
+//        }
+//    }
+//
+//    /**
+//     * 显示提示信息
+//     *
+//     * @since 2.5.0
+//     *
+//     */
+//    private void showMissingPermissionDialog() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle(R.string.notifyTitle);
+//        builder.setMessage(R.string.notifyMsg);
+//        // 拒绝, 退出应用
+//        builder.setNegativeButton(R.string.cancel,
+//                new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finishActivity();
+//                    }
+//                });
+//
+//        builder.setPositiveButton(R.string.setting,
+//                new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        startAppSettings();
+//                    }
+//                });
+//
+//        builder.setCancelable(false);
+//
+//        builder.show();
+//    }
+//
+//    /**
+//     *  启动应用的设置
+//     *
+//     * @since 2.5.0
+//     *
+//     */
+//    private void startAppSettings() {
+//        Intent intent = new Intent(
+//                Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+//        intent.setData(Uri.parse("package:" + getPackageName()));
+//        startActivity(intent);
+//    }
 }

@@ -1,6 +1,7 @@
 package com.yj.base.information;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.yj.base.R;
 import com.yj.baselibrary.base.BaseFragment;
@@ -8,10 +9,12 @@ import com.yj.baselibrary.base.BaseFragment;
 /**
  * 咨询
  */
-public class InformationFragment extends BaseFragment implements View.OnClickListener{
+public class InformationFragment extends BaseFragment{
+
+    private TextView tb_tv_title;
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_mine;
+        return R.layout.fragment_information;
     }
 
     @Override
@@ -25,19 +28,15 @@ public class InformationFragment extends BaseFragment implements View.OnClickLis
 
     }
 
-//    public static InformationFragment mineFragment;
-//
-//    public static InformationFragment getInstance() {
-//        mineFragment = new InformationFragment();
-//        return mineFragment;
-//    }
+    public static InformationFragment mineFragment;
+
+    public static InformationFragment getInstance() {
+        mineFragment = new InformationFragment();
+        return mineFragment;
+    }
     @Override
     protected void initView(){
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
+        tb_tv_title=rootView.findViewById(R.id.tb_tv_title);
+        tb_tv_title.setText("资讯");
     }
 }

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:id="@+id/ly_tab"
+    android:background="@color/colorAccent"
     android:layout_height="50dp">
 
     <ImageView
@@ -12,6 +13,8 @@
         android:layout_alignParentLeft="true"
         android:layout_gravity="center_vertical"
         android:paddingLeft="10dp"
+        android:src="@drawable/left_white"
+        android:visibility="gone"
         android:paddingRight="10dp" />
 
     <TextView
@@ -20,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/white"
         />
     <ImageView
         android:id="@+id/iv_right"
@@ -42,7 +45,7 @@
         android:layout_alignParentRight="true"
         android:layout_gravity="center_vertical"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/white"
         android:visibility="gone"
         />
     </RelativeLayout>
